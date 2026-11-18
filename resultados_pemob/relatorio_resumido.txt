@@ -1,0 +1,49 @@
+PEMOB 2026 — RESUMO SIMPLES
+===========================
+
+O que foi analisado
+-------------------
+A planilha contém respostas de 96 municípios. A análise observou informações sobre transporte, infraestrutura, tarifas e gestão da mobilidade urbana. Os resultados descrevem esses municípios participantes; não representam automaticamente todas as cidades do Brasil.
+
+Principais resultados sobre tarifas de ônibus
+--------------------------------------------
+Nos 96 municípios com tarifa atual e anterior informadas:
+
+- A tarifa atual média foi R$ 5,35.
+- A tarifa anterior média foi R$ 4,91.
+- Em média, a diferença foi de R$ 0,44 por município.
+- A variação percentual média, calculada município a município, foi 9,98%.
+- A tarifa aumentou em 85 municípios, diminuiu em 4 e permaneceu igual em 7.
+
+Esses números comparam a tarifa atual com a tarifa anterior informada na pesquisa. Eles não mostram, sozinhos, por que os preços mudaram nem quando cada alteração ocorreu.
+
+Diferenças entre estados
+------------------------
+Entre os estados presentes na base, o Rio Grande do Sul teve a maior tarifa atual média: R$ 7,24, com 4 municípios na amostra. Rondônia teve a menor: R$ 3,00, mas esse resultado vem de apenas 1 município.
+
+Como o número de municípios varia por estado, essas médias estaduais devem ser lidas com cautela. Por exemplo, um estado representado por um município não permite concluir que o valor seja típico de todo o estado.
+
+Serviços de transporte mais citados
+-----------------------------------
+Na pergunta sobre serviços de transporte público sob gestão municipal, entre os 96 municípios:
+
+- Táxi foi citado por 93 municípios (96,9%).
+- Ônibus municipal foi citado por 91 (94,8%).
+- Vans ou micro-ônibus foram citados por 50 (52,1%).
+
+Uma mesma cidade pode citar vários serviços, então as contagens e percentuais podem somar mais de 100%.
+
+Como entender os termos
+-----------------------
+- Média: soma dos valores válidos dividida pela quantidade de respostas válidas.
+- Mediana: valor central quando as respostas são colocadas em ordem.
+- NR, NA ou vazio: resposta não informada ou não aplicável; não entra nas médias.
+- R$: valor em reais. %: percentual. A formatação segue a indicação percentual gravada na planilha original.
+
+Onde encontrar mais detalhes
+----------------------------
+Os arquivos CSV na mesma pasta contêm os resultados completos. `variacao_tarifas_municipio` compara tarifas município a município; `estatisticas_indicadores` detalha medidas numéricas por estado; e `frequencias_categoricas` reúne as respostas textuais.
+
+Limitação
+---------
+A base é uma pesquisa de indicadores municipais, não uma série de registros de GPS ou horários de viagens. Por isso, esta análise descreve a mobilidade informada pelos municípios, mas não prevê trânsito nem mede atrasos em tempo real.

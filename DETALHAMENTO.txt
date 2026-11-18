@@ -1,0 +1,32 @@
+DETALHAMENTO DO CÓDIGO — ANÁLISE PEMOB COM PYSPARK
+
+OBJETIVO
+O programa analisar_pemob.py lê a base pemob_municipal_2026.xlsx e gera saídas que permitem explorar os dados municipais de mobilidade urbana por estado. A implementação usa SparkSession, DataFrames, expressões SQL, agregação e escrita distribuída CSV.
+
+ORGANIZAÇÃO DA PLANILHA
+A primeira aba contém os enunciados das perguntas na linha 1, seus códigos na linha 2 e os municípios a partir da linha 3. As três primeiras colunas identificam código IBGE, UF e município. O código usa a linha de códigos para gerar nomes curtos e previsíveis para as centenas de colunas.
+
+ETAPAS DO PROGRAMA
+1. Argumentos de linha de comando: --input seleciona o Excel e --output seleciona a pasta de saída. Ambos têm valores padrão.
+2. Validação: confirma que o Excel existe e cria a pasta destino.
+3. Sessão Spark: inicia o aplicativo AnalisePEMOB em execução local, usando os núcleos disponíveis e quatro partições de shuffle.
+4. Conversão de entrada: openpyxl lê a aba em modo somente leitura e grava um CSV UTF-8 temporário. Isso permite que o leitor CSV nativo do Spark distribua a leitura das linhas. Como há apenas 108 municípios, essa conversão local é adequada para o arquivo entregue; para arquivos Excel de grande escala seria melhor receber a fonte em Parquet/CSV ou outro formato distribuído.
+5. Leitura e tipagem: Spark lê as colunas inicialmente como texto. O código tenta converter cada resposta para número e classifica como indicador numérico as colunas em que ao menos 80% das respostas não vazias são numéricas. Isso inclui colunas com NR/NA e números textuais.
+6. Limpeza: respostas NR, NA, NI e vazias viram valores nulos nas métricas numéricas. Vírgula decimal e sinal de percentual no texto são aceitos na conversão. Identificadores e textos permanecem disponíveis.
+7. Unidades: o enunciado original é normalizado para identificar reais, porcentagens, quilômetros e anos. A formatação brasileira usa ponto para milhar e vírgula decimal. Se uma célula percentual estiver marcada como porcentagem no Excel, o valor fracionário armazenado é convertido para pontos percentuais (por exemplo, 0,05 vira 5,00%).
+8. Estatísticas: por UF e indicador são calculados número de respostas, média, mediana aproximada, mínimo, máximo e desvio padrão. Há campos numéricos para cálculo e campos *_formatado para exibição.
+9. Comparação de tarifas: quando os códigos 3.1.1.A e 3.1.1.B estão presentes, calcula-se por município a diferença em reais e a variação percentual sobre a tarifa anterior, mais um resumo por UF.
+10. Frequências categóricas: respostas textuais são transformadas em formato longo. Opções separadas por ponto e vírgula são contadas por UF/pergunta e recebem percentual sobre municípios respondentes. Em múltipla escolha, percentuais podem somar acima de 100%.
+11. Persistência: cada resultado é escrito em diretório CSV separado. O Spark pode criar múltiplas partes de saída, comportamento normal em escrita distribuída.
+12. Relatórios textuais: relatorio_analises.txt consolida explicações, estatísticas por UF/indicador e respostas frequentes. relatorio_resumido.txt apresenta os resultados centrais e limitações em linguagem simples.
+13. Encerramento: a persistência em cache é liberada e SparkSession é encerrada mesmo se ocorrer erro.
+
+CONCEITOS SPARK DEMONSTRADOS
+SparkSession é a entrada para configurar e executar o Spark. DataFrames representam os dados tabulares e permitem que o Catalyst otimize operações como seleção, conversão, groupBy e agregação. As ações de escrita e count materializam o plano de execução. O modo local executa tarefas Spark na máquina do aluno; em cluster, o mesmo pipeline pode distribuir partições entre executores. PySpark comunica as chamadas Python ao mecanismo Spark na JVM por meio da camada Py4J.
+
+LIMITAÇÕES E LEITURA DOS RESULTADOS
+A base fornecida tem 96 municípios com identificação preenchida na execução observada, portanto serve para demonstrar processamento e organização, não para provar escalabilidade ou aceleração em Big Data. As médias por UF são descritivas e cada indicador tem sua própria cobertura de respostas; por isso as saídas incluem contagens de valores informados. A classificação numérica usa um limite de 80% de respostas convertíveis; indicadores mistos ou textuais podem exigir revisão. A planilha é um retrato de indicadores municipais e não contém séries temporais de GPS, então o código não prevê tráfego.
+
+EXECUÇÃO
+Consulte README.md para instalação, requisitos de Java e comandos PowerShell. A execução padrão é:
+python .\analisar_pemob.py

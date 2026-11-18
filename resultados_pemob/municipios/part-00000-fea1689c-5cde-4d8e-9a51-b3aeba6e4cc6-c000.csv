@@ -1,0 +1,97 @@
+codigo_ibge,uf,municipio
+1200401,AC,Rio Branco
+1302603,AM,Manaus
+2905701,BA,Camaçari
+2910800,BA,Feira de Santana
+2918407,BA,Juazeiro
+2927408,BA,Salvador
+2303709,CE,Caucaia
+2304400,CE,Fortaleza
+2307304,CE,Juazeiro do Norte
+2307650,CE,Maracanaú
+5300108,DF,Brasília
+3201308,ES,Cariacica
+3205200,ES,Vila Velha
+3205309,ES,Vitória
+5201108,GO,Anápolis
+5201405,GO,Aparecida de Goiânia
+2105302,MA,Imperatriz
+2111201,MA,São José de Ribamar
+3106200,MG,Belo Horizonte
+3106705,MG,Betim
+3127701,MG,Governador Valadares
+3143302,MG,Montes Claros
+3170107,MG,Uberaba
+3170206,MG,Uberlândia
+5002704,MS,Campo Grande
+1500800,PA,Ananindeua
+1501402,PA,Belém
+1504208,PA,Marabá
+1506807,PA,Santarém
+2504009,PB,Campina Grande
+2507507,PB,João Pessoa
+2604106,PE,Caruaru
+2607901,PE,Jaboatão dos Guararapes
+2611101,PE,Petrolina
+2611606,PE,Recife
+2211001,PI,Teresina
+4104808,PR,Cascavel
+4106902,PR,Curitiba
+4113700,PR,Londrina
+4115200,PR,Maringá
+4119905,PR,Ponta Grossa
+4125506,PR,São José dos Pinhais
+3300456,RJ,Belford Roxo
+3301009,RJ,Campos dos Goytacazes
+3301702,RJ,Duque de Caxias
+3302403,RJ,Macaé
+3303302,RJ,Niterói
+3303500,RJ,Nova Iguaçu
+3303906,RJ,Petrópolis
+3304557,RJ,Rio de Janeiro
+3304904,RJ,São Gonçalo
+3305109,RJ,São João de Meriti
+3306305,RJ,Volta Redonda
+2408102,RN,Natal
+2403251,RN,Parnamirim
+1100205,RO,Porto Velho
+1400100,RR,Boa Vista
+4305108,RS,Caxias do Sul
+4309209,RS,Gravataí
+4314902,RS,Porto Alegre
+4316907,RS,Santa Maria
+4202404,SC,Blumenau
+4204202,SC,Chapecó
+4205407,SC,Florianópolis
+4208203,SC,Itajaí
+4209102,SC,Joinville
+4216602,SC,São José
+2800308,SE,Aracaju
+3503208,SP,Araraquara
+3505708,SP,Barueri
+3506003,SP,Bauru
+3509502,SP,Campinas
+3510609,SP,Carapicuíba
+3513009,SP,Cotia
+3513801,SP,Diadema
+3515004,SP,Embu das Artes
+3518800,SP,Guarulhos
+3520509,SP,Indaiatuba
+3524402,SP,Jacareí
+3526902,SP,Limeira
+3534401,SP,Osasco
+3538709,SP,Piracicaba
+3541000,SP,Praia Grande
+3543402,SP,Ribeirão Preto
+3547809,SP,Santo André
+3548500,SP,Santos
+3548708,SP,São Bernardo do Campo
+3549805,SP,São José do Rio Preto
+3549904,SP,São José dos Campos
+3550308,SP,São Paulo
+3551009,SP,São Vicente
+3552205,SP,Sorocaba
+3552502,SP,Suzano
+3552809,SP,Taboão da Serra
+3554102,SP,Taubaté
+1721000,TO,Palmas
